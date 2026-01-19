@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Chicken Farming Simulator</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='style/main.css'>
+    <script src='script/main.js'></script>
+</head>
+
+<body>
+    <audio>
+        <source class='ChickSound' src="/sound/chick0.wav" type="audio/wav">
+        <source class='ChickSound' src="/sound/chick1.wav" type="audio/wav">
+        <source class='ChickSound' src="/sound/chick2.wav" type="audio/wav">
+        <source class='ChickSound' src="/sound/chick3.wav" type="audio/wav">
+    </audio>
+    <div class="container">
+        <div class="header">
+            <h1>Chicken Farming Manager</h1>
+            <h1>Balance: $<span id="chirps">0</span></h1>
+            <h3><span id="cps">0</span> cp/s</h3>
+        </div>
+        <div class="left-menu"></div>
+        <div class="content">
+            <img id='chick' src="/image/chick.png" draggable="false">
+        </div>
+        <div class="right-menu"></div>
+        <div class="footer"></div>
+    </div>
+</body>
+
+</html>
