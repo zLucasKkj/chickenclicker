@@ -33,4 +33,3 @@ window.onload = (e) => {
     }
     step();
 };
-//# sourceMappingURL=main.js.map
