@@ -61,8 +61,12 @@ h3 {
 }
 
 .container div.content img#chick {
-    width: 15%;
+    /* width: 50vw; */
+    max-width: 256px;
     object-fit: cover;
     cursor: pointer;
     user-select: none;
+
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    -moz-tap-highlight-color: rgba(0, 0, 0, 0);
 }

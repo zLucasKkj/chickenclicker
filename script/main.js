@@ -7,13 +7,18 @@ var game = {
     balance: 0,
     cps: 0.25
 };
+window.oncontextmenu = function (event) {
+    event.preventDefault();
+    event.stopPropagation();
+    return false;
+};
 window.onload = (e) => {
     const chickSounds = document.querySelectorAll('.ChickSound');
     const chick = document.querySelector('#chick');
     const cpsElement = document.querySelector("#cps");
     const chirpsElement = document.querySelector("#chirps");
     function chirp(increment) {
-        cpsElement.innerHTML = game.cps.toString();
+        cpsElement.innerHTML = `C$${game.cps} p/s`;
         game.balance = game.balance + increment;
         chirpsElement.innerHTML = game.balance.toFixed(2);
         new Audio(pickRandomArrayValue(chickSounds).src).play();
