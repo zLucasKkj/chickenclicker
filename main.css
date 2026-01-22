@@ -1,4 +1,7 @@
 body {
+    user-select: none;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    -moz-tap-highlight-color: rgba(0, 0, 0, 0);
     margin: unset;
     overflow: hidden;
     background-image: url('./image/bliss.jpg');
@@ -10,37 +13,56 @@ body {
     height: 100vh;
 }
 
-h1 {
-    font-family: sans-serif;
-    color: white;
-    text-shadow: 0px 5px 10px black;
-}
+@keyframes pop {
+    from {
+        transform: scale(0.95)
+    }
 
-h3 {
-    font-family: sans-serif;
-    color: white;
-    text-shadow: 0px 5px 10px black;
+    50% {
+        transform: scale(1)
+    }
+
+    to {
+        transform: scale(0.95)
+    }
 }
 
 .container {
     display: grid;
-    grid-template-areas:
-        "left-menu header right-menu"
-        "left-menu content right-menu"
-        "left-menu footer right-menu";
+    grid-template-areas: "header" "content" "footer";
     grid-template-rows: 10% 80% 10%;
-    grid-template-columns: 10% 80%;
     width: 100%;
     height: 100%;
 }
 
 .container div.header {
     grid-area: header;
-    text-align: center;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
-.container div.left-menu {
-    grid-area: left-menu;
+.container div.header div.title {
+    font-family: sans-serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-shadow: 0px 5px 7.5px black;
+}
+
+.container div.header div.title h1 {
+    margin: unset;
+    margin-top: 10px;
+    color: #ffbe50;
+}
+
+.container div.header div.title p {
+    margin: unset;
+    color: #ffffff;
+    animation: pop 1s infinite;
 }
 
 .container div.content {
@@ -51,22 +73,91 @@ h3 {
     align-items: center;
 }
 
-.container div.right-menu {
-    grid-area: right-menu;
+.container div.content h1 {
+    margin: unset;
+    font-family: sans-serif;
+    color: #ffffff;
+    text-shadow: 0px 5px 7.5px black;
+}
+
+.container div.content h3 {
+    margin: unset;
+    font-family: sans-serif;
+    color: #ffffff;
+    text-shadow: 0px 5px 7.5px black;
+}
+
+.container div.content #chick {
+    max-width: 256px;
+    object-fit: cover;
+    margin: 15px;
+}
+
+.container div.content div#shop {
+    border-radius: 10px;
+    border: 1.5px solid #ffffff;
+    padding: 5px;
+    background-color: #ffffff3d;
+    width: 50%;
+    height: 10%;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: left;
+    align-items: center;
+}
+
+.container div.content div#shop div.button {
+    position: relative;
+    width: 75px;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+.container div.content div#shop div.button:hover {
+    background-color: rgba(70, 70, 70, 0.5);
+}
+
+.container div.content div#shop div.button img {
+    width: 100%;
+    height: 100%;
+}
+
+.container div.content div#shop div.button p#name,
+p#price {
+    font-family: sans-serif;
+    color: #ffffff;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    white-space: nowrap;
+    text-shadow: 0px 5px 7.5px black;
+    max-width: 100%;
+}
+
+.container div.content div#shop div.button p#name {
+    top: 0%;
+    left: 50%;
+}
+
+.container div.content div#shop div.button p#price {
+    top: 65%;
+    left: 50%;
 }
 
 .container div.footer {
     grid-area: footer;
-    text-align: center;
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: center;
+    align-items: center;
 }
 
-.container div.content img#chick {
-    /* width: 50vw; */
-    max-width: 256px;
-    object-fit: cover;
-    cursor: pointer;
-    user-select: none;
-
-    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
-    -moz-tap-highlight-color: rgba(0, 0, 0, 0);
+.container div.footer p,
+a {
+    font-family: sans-serif;
+    color: rgba(255, 255, 255, .25);
+    text-shadow: 0px 5px 7.5px black;
 }
